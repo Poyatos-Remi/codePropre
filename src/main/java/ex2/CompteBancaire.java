@@ -1,6 +1,6 @@
 package ex2;
 
-/** Représente un compte bancaire de type compte courante (type=CC) ou livret A (type=LA)
+/** Représente un compte bancaire de type compte courant (type=CC) ou livret A (type=LA)
  * @author DIGINAMIC
  */
 public class CompteBancaire {
@@ -17,6 +17,10 @@ public class CompteBancaire {
 	/** Le type vaut soit CC=Compte courant, ou soit LA=Livret A */
 	private String type;
 	
+	public CompteBancaire() {
+		
+	}
+	
 	/**
 	 * @param solde
 	 * @param decouvert
@@ -27,6 +31,20 @@ public class CompteBancaire {
 		this.type = type;
 		this.solde = solde;
 		this.decouvert = decouvert;
+	}
+	
+	/** Ce constructeur est utilisé pour créer un compte de type Livret A
+	 * @param type = LA
+	 * @param solde représente le solde du compte
+	 * @param decouvert  représente le découvert autorisé
+	 * @param tauxRemuneration  représente le taux de rémunération du livret A
+	 */
+	public CompteBancaire(String type, double solde, double decouvert, double tauxRemuneration) {
+		super();
+		this.type = type;
+		this.solde = solde;
+		this.decouvert = decouvert;
+		this.tauxRemuneration = tauxRemuneration;
 	}
 	
 	/** Ajoute un montant au solde
@@ -58,19 +76,6 @@ public class CompteBancaire {
 		}
 	}
 	
-	/** Ce constructeur est utilisé pour créer un compte de type Livret A
-	 * @param type = LA
-	 * @param solde représente le solde du compte
-	 * @param decouvert  représente le découvert autorisé
-	 * @param tauxRemuneration  représente le taux de rémunération du livret A
-	 */
-	public CompteBancaire(String type, double solde, double decouvert, double tauxRemuneration) {
-		super();
-		this.type = type;
-		this.solde = solde;
-		this.decouvert = decouvert;
-		this.tauxRemuneration = tauxRemuneration;
-	}
 	
 	/** Getter for solde
 	 * @return the solde
